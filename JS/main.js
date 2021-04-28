@@ -7,7 +7,7 @@ const name = document.getElementById('name');
 
 
 //SHOW THE TIME
-function showtime(){
+const showtime = () =>{
     let today = new Date(), hour = today.getHours(), min = today.getMinutes();
     
     //Set AM or PM
@@ -23,12 +23,12 @@ function showtime(){
 }
 
 //Add zero
-function addZero(n){
+const addZero = (n) =>{
     return (parseInt(n, 10) < 10 ? '0' : '') +n;
 }
 
 //Set background picture and greeting
-function setBgGreet(){
+const setBgGreet = () =>{
     let today = new Date(),
     hour = today.getHours();
 
@@ -50,7 +50,7 @@ function setBgGreet(){
 }
 
 //Get name
-function getName(){
+const getName = () =>{
     if(localStorage.getItem('name') === null){
         name.textContent = '[Enter Name]';
     }else{
@@ -59,7 +59,7 @@ function getName(){
 }
 
 //Set name
-function setName(e){
+const setName = (e) =>{
     if(e.type === 'keypress'){
         if(e.which == 13 || e.keyCode ==13){
             localStorage.setItem('name', e.target.innerText);
@@ -71,7 +71,7 @@ function setName(e){
 }
 
 //Get goal 
-function getGoal(){
+const getGoal = () =>{
     if(localStorage.getItem('goal') === null){
         goal.textContent = '[Enter Goal]';
     }else{
@@ -80,7 +80,7 @@ function getGoal(){
 }
 
 //Set goal
-function setGoal(e){
+const setGoal = (e) =>{
     if(e.type === 'keypress'){
         if(e.which == 13 || e.keyCode ==13){
             localStorage.setItem('goal', e.target.innerText);
